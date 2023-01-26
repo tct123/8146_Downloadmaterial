@@ -1,0 +1,4 @@
+LIBRARY native_lib
+EXPORTS
+    hello_flutter
+    get_42

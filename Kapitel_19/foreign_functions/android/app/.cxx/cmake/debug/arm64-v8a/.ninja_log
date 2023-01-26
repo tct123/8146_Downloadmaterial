@@ -1,0 +1,3 @@
+# ninja log v5
+0	59	1626186804	CMakeFiles/native_lib.dir/hello.c.o	6a2ec6a13223448
+59	106	1626186804	/Volumes/Extern512/develop/flutterbuch/00_online_material/Kapitel_19/foreign_functions/build/app/intermediates/cmake/debug/obj/arm64-v8a/libnative_lib.so	900b65de991f0315

@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Volumes/Extern512/develop/flutterbuch/00_online_material/Kapitel_19/foreign_functions/android/app/.cxx/cmake/debug/x86_64",
+  "command": "/Users/marc/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=x86_64-none-linux-android21 --gcc-toolchain=/Users/marc/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/marc/Library/Android/sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles/native_lib.dir/hello.c.o   -c /Volumes/Extern512/develop/flutterbuch/00_online_material/Kapitel_19/foreign_functions/native_lib/hello.c",
+  "file": "/Volumes/Extern512/develop/flutterbuch/00_online_material/Kapitel_19/foreign_functions/native_lib/hello.c"
+}
+]
