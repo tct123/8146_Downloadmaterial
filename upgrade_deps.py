@@ -11,5 +11,9 @@ for dir in first_dir_list:
         pass
     else:
         dir_list.append(dir)
+for dir in dir_list:
+    print(dir)
+    subprocess.run(["cd", dir])
+    subprocess.run(["flutter", "pub", "upgrade", "--major-versions"])
 
-print(dir_list)
+# print(dir_list)
