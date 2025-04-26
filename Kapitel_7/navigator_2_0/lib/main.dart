@@ -17,20 +17,21 @@ class MyPizzaApp extends StatelessWidget {
 
 class PizzaRoute {
   PizzaRoute.home()
-      : flow = PizzaPage.homeLocation,
-        category = null,
-        flavor = null,
-        size = 0;
+    : flow = PizzaPage.homeLocation,
+      category = null,
+      flavor = null,
+      size = 0;
 
   PizzaRoute.fromUri({Uri uri})
-      : assert(uri.pathSegments.isNotEmpty),
-        flow = uri.pathSegments.elementAt(0),
-        category =
-        uri.pathSegments.length > 1 ? uri.pathSegments.elementAt(1) : null,
-        flavor =
-        uri.pathSegments.length > 2 ? uri.pathSegments.elementAt(2) : null,
-        size = int.parse(
-            uri.pathSegments.length > 3 ? uri.pathSegments.elementAt(3) : '0');
+    : assert(uri.pathSegments.isNotEmpty),
+      flow = uri.pathSegments.elementAt(0),
+      category =
+          uri.pathSegments.length > 1 ? uri.pathSegments.elementAt(1) : null,
+      flavor =
+          uri.pathSegments.length > 2 ? uri.pathSegments.elementAt(2) : null,
+      size = int.parse(
+        uri.pathSegments.length > 3 ? uri.pathSegments.elementAt(3) : '0',
+      );
 
   // Use Case der App
   String flow;
@@ -52,54 +53,51 @@ abstract class PizzaPage {
 
   static MaterialPage get homePage => MaterialPage(child: _HomePageWidget());
 
-  static MaterialPage detailPage(PizzaRoute pizzaRoute) => MaterialPage(
-    child: _DetailPageWidget(pizzaRoute: pizzaRoute),
-  );
+  static MaterialPage detailPage(PizzaRoute pizzaRoute) =>
+      MaterialPage(child: _DetailPageWidget(pizzaRoute: pizzaRoute));
 
   static MaterialPage get listPage => MaterialPage(child: _ListPageWidget());
 }
 
 class _ListPageWidget extends StatelessWidget {
-  const _ListPageWidget({
-    Key key,
-  }) : super(key: key);
+  const _ListPageWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: ['Salami', 'Thunfisch', 'Schinken']
-            .map((x) => ElevatedButton(
-          onPressed: () {
-            final pizzaRoute = PizzaRoute.fromUri(
-              uri: Uri(path: '/details/pizza/salami/26'),
-            );
+        children:
+            ['Salami', 'Thunfisch', 'Schinken']
+                .map(
+                  (x) => ElevatedButton(
+                    onPressed: () {
+                      final pizzaRoute = PizzaRoute.fromUri(
+                        uri: Uri(path: '/details/pizza/salami/26'),
+                      );
 
-            Navigator.of(context).pushNamed(
-              PizzaPage.detailsLocation,
-              arguments: pizzaRoute,
-            );
-          },
-          child: Text(x),
-        ))
-            .toList()
-        // den Zurück-Button hinzufügen
-          ..add(
-            ElevatedButton(
-              onPressed: Navigator.of(context).pop,
-              child: Text('Zurück'),
-            ),
-          ),
+                      Navigator.of(context).pushNamed(
+                        PizzaPage.detailsLocation,
+                        arguments: pizzaRoute,
+                      );
+                    },
+                    child: Text(x),
+                  ),
+                )
+                .toList()
+              // den Zurück-Button hinzufügen
+              ..add(
+                ElevatedButton(
+                  onPressed: Navigator.of(context).pop,
+                  child: Text('Zurück'),
+                ),
+              ),
       ),
     );
   }
 }
 
 class _DetailPageWidget extends StatelessWidget {
-  const _DetailPageWidget({
-    Key key,
-    this.pizzaRoute,
-  }) : super(key: key);
+  const _DetailPageWidget({Key key, this.pizzaRoute}) : super(key: key);
 
   final PizzaRoute pizzaRoute;
 
@@ -110,9 +108,9 @@ class _DetailPageWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Art: ${pizzaRoute?.category}'),
-            Text('Sorte: ${pizzaRoute?.flavor}'),
-            Text('Größe: ${pizzaRoute?.size}'),
+            Text('Art: ${pizzaRoute.category}'),
+            Text('Sorte: ${pizzaRoute.flavor}'),
+            Text('Größe: ${pizzaRoute.size}'),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -130,9 +128,7 @@ class _DetailPageWidget extends StatelessWidget {
 // die build-Methode zugeführt wird. Dann kann der Router aufgelöst werden,
 // um eine neue RouteInformation einzutragen.
 class _HomePageWidget extends StatelessWidget {
-  const _HomePageWidget({
-    Key key,
-  }) : super(key: key);
+  const _HomePageWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -163,9 +159,10 @@ class _RouteInformationParser extends RouteInformationParser<PizzaRoute> {
   @override
   Future<PizzaRoute> parseRouteInformation(RouteInformation routeInformation) {
     final uri = Uri(path: routeInformation.location);
-    final pizzaRoute = uri.pathSegments.isEmpty
-        ? PizzaRoute.home()
-        : PizzaRoute.fromUri(uri: uri);
+    final pizzaRoute =
+        uri.pathSegments.isEmpty
+            ? PizzaRoute.home()
+            : PizzaRoute.fromUri(uri: uri);
 
     // Die Methodensignatur fordert eine Future
     return SynchronousFuture(pizzaRoute);
@@ -173,9 +170,9 @@ class _RouteInformationParser extends RouteInformationParser<PizzaRoute> {
 }
 
 class _RouterDelegate extends RouterDelegate<PizzaRoute> {
-  ValueNotifier<List<Page>> _navigationHistory = ValueNotifier<List<Page>>(
-    [PizzaPage.homePage],
-  );
+  ValueNotifier<List<Page>> _navigationHistory = ValueNotifier<List<Page>>([
+    PizzaPage.homePage,
+  ]);
 
   @override
   Widget build(BuildContext context) {
@@ -189,9 +186,10 @@ class _RouterDelegate extends RouterDelegate<PizzaRoute> {
             switch (routeSettings.name) {
               case PizzaPage.detailsLocation:
                 return MaterialPageRoute(
-                  builder: (context) => _DetailPageWidget(
-                    pizzaRoute: routeSettings.arguments as PizzaRoute,
-                  ),
+                  builder:
+                      (context) => _DetailPageWidget(
+                        pizzaRoute: routeSettings.arguments as PizzaRoute,
+                      ),
                 );
               default:
                 return MaterialPageRoute(

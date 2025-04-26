@@ -9,5 +9,5 @@ void main() {
   final length = cast.length;
 
   // Auch eine in Klammern geschriebene Form ist möglich
-  final castAndLength = (x as String).length;
+  final castAndLength = (x).length;
 }

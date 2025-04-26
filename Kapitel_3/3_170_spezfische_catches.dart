@@ -1,5 +1,5 @@
 // Eine Exception wird hingegen implementiert (Interface).
-class CustomException implements Exception { }
+class CustomException implements Exception {}
 
 void main() {
   try {
@@ -7,19 +7,15 @@ void main() {
     // in eine Zahl verwandelbar. Eine
     // FormatException ist die Folge.
     final number = int.parse('abc');
-  }
-  on CustomException catch(e) {
+  } on CustomException {
     // Anweisungen für CustomException
-  }
-  on FormatException catch(e, stacktrace) {
+  } on FormatException catch (e) {
     // Anweisungen für FormatException
-  }
-  catch (e, stacktrace) {
+  } catch (e, stacktrace) {
     // Alle anderen Errors, Exceptions oder Objekte
 
     print(e);
     // Der Stacktrace aus catch
     print(stacktrace);
   }
-
 }

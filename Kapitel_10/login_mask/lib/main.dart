@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
@@ -105,7 +104,7 @@ class _LoginMaskState extends State<LoginMask> {
                               value: _commentEnabled,
                               onChanged: (value) {
                                 builderSetState(
-                                      () {
+                                  () {
                                     _commentEnabled = value;
                                   },
                                 );
@@ -123,7 +122,8 @@ class _LoginMaskState extends State<LoginMask> {
                                 placeholder: 'Wie finden Sie den Login?',
                                 maxLines: 3,
                                 maxLength: 140,
-                                maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                                maxLengthEnforcement:
+                                    MaxLengthEnforcement.enforced,
                                 controller: _feedbackTextController,
                                 onChanged: (text) => builderSetState(() {}),
                               ),

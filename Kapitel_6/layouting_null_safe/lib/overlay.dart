@@ -5,7 +5,7 @@ import 'package:flutter/scheduler.dart';
 class OverlayExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       final overlay = Overlay.of(context);
 
       final background = OverlayEntry(
@@ -14,7 +14,7 @@ class OverlayExample extends StatelessWidget {
         ),
       );
 
-      overlay!.insert(background);
+      overlay.insert(background);
 
       final overlayEntry = OverlayEntry(
         builder: (context) => Center(
@@ -48,14 +48,14 @@ class _ModalBarrierAlertExampleState extends State<ModalBarrierAlertExample> {
   void initState() {
     super.initState();
 
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       final overlay = Overlay.of(context);
 
       _infoBox = OverlayEntry(builder: (context) {
         return InfoBox();
       });
 
-      overlay!.insert(_infoBox);
+      overlay.insert(_infoBox);
     });
   }
 

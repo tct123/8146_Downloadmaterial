@@ -94,7 +94,6 @@ class _AnimatedSizeExampleState extends State<AnimatedSizeExample>
 
           return AnimatedSize(
             duration: const Duration(milliseconds: 400),
-            vsync: this,
             child: Container(
               color: Colors.green,
               height: hasEnded ? 300 : 100,

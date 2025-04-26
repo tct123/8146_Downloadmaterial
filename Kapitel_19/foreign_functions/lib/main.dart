@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:ffi' as ffi;
 import 'dart:io' as io;
 
-
 void main() {
   runApp(MyApp());
 }
@@ -13,7 +12,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Aufruf einfügen
     tryNative();
-
 
     return MaterialApp(
       title: 'Flutter Demo',
@@ -50,7 +48,6 @@ class MyApp extends StatelessWidget {
 
     print(intFunction());
   }
-
 }
 
 class MyHomePage extends StatefulWidget {
@@ -124,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:localization_mit_intl_plugin/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'generated/l10n.dart';
-
 void main() {
   runApp(MyApp());
 }
@@ -51,7 +49,6 @@ class _MyAppState extends State<MyApp> {
             )
           ],
         ),
-
       ),
     );
   }

@@ -26,7 +26,7 @@ class DismissableExample extends StatelessWidget {
               width: double.infinity,
             ),
             confirmDismiss: (direction) async =>
-            direction == DismissDirection.endToStart,
+                direction == DismissDirection.endToStart,
           ),
           const Text('Unter dem Dismissable'),
         ],
@@ -70,8 +70,8 @@ class _DraggableExampleState extends State<DraggableExample> {
           ),
           const SizedBox(height: 100),
           DragTarget<int>(
-            onAccept: (data) => ++tosses,
-            onWillAccept: (tosses) => tosses.runtimeType == int,
+            onAcceptWithDetails: (data) => ++tosses,
+            onWillAcceptWithDetails: (tosses) => tosses.runtimeType == int,
             builder: (context, candidateData, rejectedData) {
               return Container(
                 color: candidateData.isEmpty ? Colors.black12 : Colors.yellow,

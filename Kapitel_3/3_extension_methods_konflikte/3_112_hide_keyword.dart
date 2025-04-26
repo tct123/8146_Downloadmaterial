@@ -1,6 +1,5 @@
 import 'extension_methods/a.dart';
 // Mit hide verstecken wir Sie explizit die eExtension
-import 'extension_methods/b.dart' hide CustomExtension;
 
 void main() {
   // Dart kann nun die Extension Method auflösen

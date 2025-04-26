@@ -7,11 +7,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return TimeInfoWidget(
-      child: MaterialApp(
-        home: StartPage(),
-      ),
-    );
+    return TimeInfoWidget(child: MaterialApp(home: StartPage()));
   }
 }
 
@@ -26,11 +22,11 @@ class StartPage extends StatelessWidget {
             const Text('Startseite'),
             const SizedBox(height: 8),
             ElevatedButton(
-              onPressed: () => TimeInfo.of(context)?.updater?.call(),
+              onPressed: () => TimeInfo.of(context).updater?.call(),
               child: Text('Aktualisieren'),
             ),
             const SizedBox(height: 16),
-            Text(TimeInfo.of(context)?.lastUpdatedTime ?? ''),
+            Text(TimeInfo.of(context).lastUpdatedTime ?? ''),
           ],
         ),
       ),
@@ -59,11 +55,8 @@ class _TimeInfoWidgetState extends State<TimeInfoWidget> {
 }
 
 class TimeInfo extends InheritedWidget {
-  TimeInfo({
-    this.lastUpdatedTime,
-    this.updater,
-    Widget child,
-  }) : super(child: child);
+  TimeInfo({this.lastUpdatedTime, this.updater, Widget child})
+    : super(child: child);
 
   final String lastUpdatedTime;
   final VoidCallback updater;

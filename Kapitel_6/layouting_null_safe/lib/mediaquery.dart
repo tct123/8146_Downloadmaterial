@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MediaQueryExample extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     final mediaQueryData = MediaQuery.of(context);
     final windowHeight = mediaQueryData.size.height;
     final windowWidth = mediaQueryData.size.width;
 
-    final window = WidgetsBinding.instance!.window;
-    final fromWindow = MediaQueryData.fromWindow(window);
+    final window = WidgetsBinding.instance.window;
+    final fromWindow = MediaQueryData.fromView(window);
     final isDarkMode = fromWindow.platformBrightness == Brightness.dark;
 
     final isPortrait = fromWindow.orientation == Orientation.portrait;
