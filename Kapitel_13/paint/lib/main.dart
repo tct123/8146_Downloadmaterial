@@ -94,15 +94,21 @@ class RoboterPainter extends CustomPainter {
 
     canvas.drawLine(Offset(60, 290), Offset(120, 290), paint);
 
-    canvas.drawPath(Path()..addPolygon([
-      Offset(120, 80),
-      Offset(185, 180),
-    ], false), paint..strokeCap = StrokeCap.round);
+    canvas.drawPath(
+        Path()
+          ..addPolygon([
+            Offset(120, 80),
+            Offset(185, 180),
+          ], false),
+        paint..strokeCap = StrokeCap.round);
 
-    canvas.drawPoints(ui.PointMode.polygon, [
-      Offset(-20, 80),
-      Offset(-65, 180),
-    ], paint);
+    canvas.drawPoints(
+        ui.PointMode.polygon,
+        [
+          Offset(-20, 80),
+          Offset(-65, 180),
+        ],
+        paint);
   }
 
   @override
