@@ -1,11 +1,9 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,7 +31,7 @@ class Images extends StatelessWidget {
   void readJson(BuildContext context) async {
     final jsonReadout = await DefaultAssetBundle.of(context).loadStructuredData(
       'text/inhalt.json',
-          (value) {
+      (value) {
         try {
           final decoded = json.decode(value);
           return Future.value(decoded);

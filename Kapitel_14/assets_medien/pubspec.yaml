@@ -35,9 +35,9 @@ dev_dependencies:
 
   flutter_svg:
 
-  cached_network_image: ^2.5.0
+  cached_network_image: ^3.4.1
 
-  material_design_icons_flutter: ^4.0.5855
+  material_design_icons_flutter: ^7.0.7296
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
