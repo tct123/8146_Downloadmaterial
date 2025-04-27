@@ -32,7 +32,7 @@ class AppDatabase extends _$AppDatabase {
   int get schemaVersion => 1;
 
   void addTodo(String title) {
-    into(todos).insert(TodoDbo(title: title));
+    into(todos).insert(TodoDbo(title: title, id: null));
   }
 
   void updateTodo(int id, String title) async {

@@ -57,7 +57,7 @@ class TodoDbo extends DataClass implements Insertable<TodoDbo> {
     };
   }
 
-  TodoDbo copyWith({int id, String title}) => TodoDbo(
+  TodoDbo copyWith({int? id, String? title}) => TodoDbo(
         id: id ?? this.id,
         title: title ?? this.title,
       );
