@@ -11,9 +11,9 @@ class CameraWidget extends StatelessWidget {
       body: FutureBuilder<Uint8List>(
         future: ImagePicker()
             .getImage(source: ImageSource.camera)
-            .then((picture) => picture.readAsBytes()),
+            .then((picture) => picture!.readAsBytes()),
         builder: (context, snapshot) {
-          if (snapshot.hasData == false || snapshot.data.isEmpty) {
+          if (snapshot.hasData == false || snapshot.data!.isEmpty) {
             return Text('Kein Bild ausgewählt');
           }
 
@@ -44,6 +44,9 @@ class CameraWidget extends StatelessWidget {
         break;
       case PermissionStatus.permanentlyDenied:
         // der Nutzer möchte nicht wieder gefragt werden
+        break;
+      case PermissionStatus.provisional:
+        // TODO: Handle this case.
         break;
     }
   }

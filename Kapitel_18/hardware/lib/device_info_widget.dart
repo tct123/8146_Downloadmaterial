@@ -19,11 +19,11 @@ class DeviceInfoWidget extends StatelessWidget {
           builder: (context, snapshot) {
             return ListView(
               children: [
-                Text(snapshot.data.androidId),
-                Text(snapshot.data.brand),
-                Text(snapshot.data.display),
-                Text(snapshot.data.model),
-                Text(snapshot.data.systemFeatures.toString()),
+                Text(snapshot.data!.androidId),
+                Text(snapshot.data!.brand),
+                Text(snapshot.data!.display),
+                Text(snapshot.data!.model),
+                Text(snapshot.data!.systemFeatures.toString()),
               ],
             );
           },

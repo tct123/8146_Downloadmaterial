@@ -8,7 +8,7 @@ class SensorsWidget extends StatefulWidget {
 }
 
 class _SensorsWidgetState extends State<SensorsWidget> {
-  Battery battery;
+  late Battery battery;
 
   @override
   void initState() {
