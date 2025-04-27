@@ -189,9 +189,9 @@ class ClippingExample extends StatelessWidget {
 class _MyCustomClipper extends CustomClipper<Rect> {
   @override
   Rect getClip(Size size) => Rect.fromCircle(
-    center: Offset(20, 20),
-    radius: 20,
-  );
+        center: Offset(20, 20),
+        radius: 20,
+      );
 
   @override
   bool shouldReclip(covariant CustomClipper<dynamic> oldClipper) => true;
@@ -274,11 +274,7 @@ class DefaultTextStyleExample extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('1. Text'),
-            SizedBox(height: 8),
-            Text('2. Text')
-          ],
+          children: [Text('1. Text'), SizedBox(height: 8), Text('2. Text')],
         ),
       ),
     );
