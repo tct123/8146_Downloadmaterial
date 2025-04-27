@@ -37,7 +37,7 @@ class CustomTweenableAnimation extends StatelessWidget {
 }
 
 class CustomTweenable {
-  const CustomTweenable({this.value});
+  const CustomTweenable({required this.value});
 
   final double value;
 

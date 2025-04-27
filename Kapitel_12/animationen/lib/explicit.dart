@@ -7,7 +7,7 @@ class AnimatedIconExample extends StatefulWidget {
 
 class _AnimatedIconExampleState extends State<AnimatedIconExample>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
 
   @override
   void initState() {
@@ -52,12 +52,11 @@ class MultipleTransitionsExample extends StatefulWidget {
       _MultipleTransitionsExampleState();
 }
 
-class _MultipleTransitionsExampleState
-    extends State<MultipleTransitionsExample>
+class _MultipleTransitionsExampleState extends State<MultipleTransitionsExample>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Tween<double> _tween;
-  Tween<double> _fadeTween;
+  late AnimationController _animationController;
+  late Tween<double> _tween;
+  late Tween<double> _fadeTween;
 
   @override
   void initState() {
@@ -134,9 +133,9 @@ class _MultipleTransitionsExampleState
 
 class MultipleTransitions extends AnimatedWidget {
   MultipleTransitions({
-    AnimationController animationController,
-    this.fadeTween,
-    this.tween,
+    required AnimationController animationController,
+    required this.fadeTween,
+    required this.tween,
   })  : animationController = animationController,
         super(listenable: animationController);
 
