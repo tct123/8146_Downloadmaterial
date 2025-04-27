@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebviewFlutterExample extends StatefulWidget {
@@ -143,7 +142,7 @@ class AddressBar extends StatefulWidget {
     required this.onRefresh,
     required this.onBack,
     this.height,
-  })  : super(key: key);
+  }) : super(key: key);
 
   final String? initialUrl;
   final ValueChanged<Uri> onAddressChanged;

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_examples/app_http_client.dart';
@@ -9,7 +8,6 @@ import 'package:http_examples/app_http_client_dio.dart' as Dio;
 import 'package:http_examples/todo_dto.dart';
 
 import 'webview/flutter_inappwebview_example.dart';
-import 'webview/webview_flutter_example.dart';
 
 void main() {
   // HttpClient
