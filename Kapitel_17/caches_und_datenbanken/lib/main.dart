@@ -18,7 +18,7 @@ class SharedPreferencesExample extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   final sharedPreferences =
-                  await SharedPreferences.getInstance();
+                      await SharedPreferences.getInstance();
                   await sharedPreferences.setBool('dieEntscheidung', false);
                   await sharedPreferences.setDouble('paketgewicht', 5.15);
                   await sharedPreferences.setInt('eineZahl', 280682);
@@ -43,14 +43,14 @@ class SharedPreferencesExample extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   final sharedPreferences =
-                  await SharedPreferences.getInstance();
+                      await SharedPreferences.getInstance();
 
                   final getBool = sharedPreferences.getBool('dieEntscheidung');
                   final getDouble = sharedPreferences.getDouble('paketgewicht');
                   final getInt = sharedPreferences.getInt('eineZahl');
                   final getString = sharedPreferences.getString('beschreibung');
                   final getStringList =
-                  sharedPreferences.getStringList('inhalte');
+                      sharedPreferences.getStringList('inhalte');
 
                   final getResult = sharedPreferences.get('unbekannt');
                   if (getResult is bool) {
@@ -67,7 +67,7 @@ class SharedPreferencesExample extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   final sharedPreferences =
-                  await SharedPreferences.getInstance();
+                      await SharedPreferences.getInstance();
 
                   // nur einen Eintrag entfernen
                   sharedPreferences.remove('inhalte');
@@ -174,25 +174,37 @@ class SqfliteExample extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(onPressed: () async {
-                database.init();
-              }, child: Text('Init')),
-              ElevatedButton(onPressed: () {
-                database.createTodos();
-              }, child: Text('ToDos erstellen')),
-              ElevatedButton(onPressed: () {
-                database.addTodo('Nino begrüßen');
-              }, child: Text('ToDo hinzufügen')),
-              ElevatedButton(onPressed: () {
-                database.updateTodo(2, 'Nino eine Nachricht schreiben');
-              }, child: Text('ToDo updaten')),
-              ElevatedButton(onPressed: () async {
-                final todos = await database.getTodos();
-                todos.forEach(print);
-              }, child: Text('ToDos ausgeben')),
-              ElevatedButton(onPressed: () {
-                database.deleteTodo(1);
-              }, child: Text('ToDo löschen')),
+              ElevatedButton(
+                  onPressed: () async {
+                    database.init();
+                  },
+                  child: Text('Init')),
+              ElevatedButton(
+                  onPressed: () {
+                    database.createTodos();
+                  },
+                  child: Text('ToDos erstellen')),
+              ElevatedButton(
+                  onPressed: () {
+                    database.addTodo('Nino begrüßen');
+                  },
+                  child: Text('ToDo hinzufügen')),
+              ElevatedButton(
+                  onPressed: () {
+                    database.updateTodo(2, 'Nino eine Nachricht schreiben');
+                  },
+                  child: Text('ToDo updaten')),
+              ElevatedButton(
+                  onPressed: () async {
+                    final todos = await database.getTodos();
+                    todos.forEach(print);
+                  },
+                  child: Text('ToDos ausgeben')),
+              ElevatedButton(
+                  onPressed: () {
+                    database.deleteTodo(1);
+                  },
+                  child: Text('ToDo löschen')),
             ],
           ),
         ),
@@ -203,7 +215,7 @@ class SqfliteExample extends StatelessWidget {
 
 /// Kapselt die Datenbank
 class AppDatabase {
-  Database _db;
+  late Database _db;
 
   void init() async {
     final pathToDb = await getDatabasesPath();
@@ -228,7 +240,7 @@ class AppDatabase {
     // _db.update('ToDo', {'title': title}, where: 'id=?', whereArgs: [id]);
   }
 
-  Future<Iterable<Map<String, Object>>> getTodos() async {
+  Future<List<Map<String, Object?>>> getTodos() async {
     final rawTodos = await _db.rawQuery('SELECT * FROM ToDo');
 
     final todos = await _db.query('ToDo');
