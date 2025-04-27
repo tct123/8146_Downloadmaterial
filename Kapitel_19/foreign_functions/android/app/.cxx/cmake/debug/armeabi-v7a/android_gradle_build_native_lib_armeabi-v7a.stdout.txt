@@ -1,3 +1,0 @@
-ninja: Entering directory `/Volumes/Extern512/develop/flutterbuch/00_online_material/Kapitel_19/foreign_functions/android/app/.cxx/cmake/debug/armeabi-v7a'
-[1/2] Building C object CMakeFiles/native_lib.dir/hello.c.o
-[2/2] Linking C shared library /Volumes/Extern512/develop/flutterbuch/00_online_material/Kapitel_19/foreign_functions/build/app/intermediates/cmake/debug/obj/armeabi-v7a/libnative_lib.so

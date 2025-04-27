@@ -1,7 +1,0 @@
-Executable : /Users/marc/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
-arguments : 
--C
-/Volumes/Extern512/develop/flutterbuch/00_online_material/Kapitel_19/foreign_functions/android/app/.cxx/cmake/debug/x86_64
-native_lib
-jvmArgs : 
-
