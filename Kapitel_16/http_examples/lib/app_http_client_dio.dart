@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:http/http.dart';
 import 'package:dio/dio.dart';
 
 enum HttpMethod {
@@ -13,8 +11,8 @@ enum HttpMethod {
 
 class AppRequest {
   AppRequest({
-    @required this.url,
-    this.payload,
+    required this.url,
+    required this.payload,
     this.method = HttpMethod.get,
   });
 
@@ -25,8 +23,8 @@ class AppRequest {
 
 class AppResponse {
   AppResponse.success({
-    @required this.rawResponse,
-    @required this.status,
+    required this.rawResponse,
+    required this.status,
   }) : isValid = true;
 
   AppResponse.failed()

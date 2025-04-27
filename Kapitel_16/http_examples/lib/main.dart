@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_examples/app_http_client.dart';
@@ -9,7 +8,6 @@ import 'package:http_examples/app_http_client_dio.dart' as Dio;
 import 'package:http_examples/todo_dto.dart';
 
 import 'webview/flutter_inappwebview_example.dart';
-import 'webview/webview_flutter_example.dart';
 
 void main() {
   // HttpClient
@@ -176,7 +174,7 @@ class _HttpClientExampleState extends State<HttpClientExample> {
   }
 
   Future<void> fetchWithHttpClient() async {
-    final request = AppRequest(url: 'todos/1');
+    final request = AppRequest(url: 'todos/1', payload: {});
     final response = await httpClient.get(request);
     print(response.rawResponse);
   }
@@ -234,6 +232,7 @@ class _HttpClientExampleState extends State<HttpClientExample> {
     final deleteRequest = AppRequest(
       url: 'posts/1',
       method: HttpMethod.delete,
+      payload: {},
     );
 
     final deleteResult = await httpClient.send(deleteRequest);
@@ -248,7 +247,7 @@ class _HttpClientExampleState extends State<HttpClientExample> {
   }
 
   Future<void> fetchFirstTodoWithDio() async {
-    final request = Dio.AppRequest(url: '/todos/1');
+    final request = Dio.AppRequest(url: '/todos/1', payload: {});
     final response = await dioHttpClient.get(request);
     print(response.rawResponse);
   }

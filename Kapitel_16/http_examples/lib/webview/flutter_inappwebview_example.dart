@@ -38,9 +38,8 @@ class InAppWebViewExample extends StatefulWidget {
 //   }
 // }
 
-
 class _InAppWebViewExampleState extends State<InAppWebViewExample> {
-  InAppWebViewController _webViewController;
+  late InAppWebViewController _webViewController;
 
   @override
   Widget build(BuildContext context) {
@@ -64,19 +63,17 @@ class _InAppWebViewExampleState extends State<InAppWebViewExample> {
               url: Uri.https('flutter.dev', ''),
             ),
             contextMenu: ContextMenu(
-              options: ContextMenuOptions(
+              settings: ContextMenuSettings(
                 hideDefaultSystemContextMenuItems: true,
               ),
               menuItems: [
                 ContextMenuItem(
-                  iosId: '1',
-                  androidId: 1,
+                  id: '1',
                   title: 'Aktion 1',
                   action: () => print('Aktion 1 ausgewählt'),
                 ),
                 ContextMenuItem(
-                  iosId: '2',
-                  androidId: 2,
+                  id: '2',
                   title: 'Aktion 2',
                   action: () => print('Aktion 2 ausgewählt'),
                 ),

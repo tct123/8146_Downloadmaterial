@@ -137,16 +137,13 @@ class _WebviewFlutterExampleState extends State<WebviewFlutterExample> {
 
 class AddressBar extends StatefulWidget {
   const AddressBar({
-    Key key,
-    this.initialUrl,
-    @required this.onAddressChanged,
-    @required this.onRefresh,
-    @required this.onBack,
-    this.height,
-  })  : assert(onAddressChanged != null),
-        assert(onRefresh != null),
-        assert(onBack != null),
-        super(key: key);
+    required Key key,
+    required this.initialUrl,
+    required this.onAddressChanged,
+    required this.onRefresh,
+    required this.onBack,
+    required this.height,
+  }) : super(key: key);
 
   final String initialUrl;
   final ValueChanged<Uri> onAddressChanged;
@@ -159,7 +156,7 @@ class AddressBar extends StatefulWidget {
 }
 
 class _AddressBarState extends State<AddressBar> {
-  TextEditingController _addressTextController;
+  late TextEditingController _addressTextController;
 
   @override
   void initState() {
