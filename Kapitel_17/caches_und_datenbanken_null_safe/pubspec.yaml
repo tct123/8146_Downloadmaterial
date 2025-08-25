@@ -31,11 +31,11 @@ dependencies:
 
   moor: ^4.2.1
   moor_generator:
-  sqlite3_flutter_libs: ^0.4.1
+  sqlite3_flutter_libs: ^0.5.39
   path_provider: ^2.0.1
   path: ^1.8.0
   sqflite: ^2.0.0+3
-  flutter_cache_manager: ^2.1.2
+  flutter_cache_manager: ^3.4.1
   shared_preferences: ^2.0.5
 
 dev_dependencies:
