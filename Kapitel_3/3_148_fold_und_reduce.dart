@@ -12,5 +12,4 @@ void main() {
   // Ist nur ein Element in der Collection,
   // so gibt reduce dieses erste Element zurück.
   print(numbers.reduce((a, b) => a + b));
-
 }

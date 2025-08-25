@@ -5,9 +5,8 @@ void main() {
     // Ein RangeError ist die Folge.
     final list = [];
     final element = list[0];
-  } catch(e) {
+  } catch (e) {
     // Wir haben den Error gefangen.
     print(e);
   }
-
 }

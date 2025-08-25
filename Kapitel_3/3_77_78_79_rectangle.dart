@@ -12,13 +12,11 @@ class Rectangle {
   }
 
   @override
-  String toString() =>
-      'Rechteck mit Seite A: $sideA und Seite B: $sideB';
+  String toString() => 'Rechteck mit Seite A: $sideA und Seite B: $sideB';
 
   @override
   void noSuchMethod(Invocation invocation) {
     print('Die Methode wurde nicht gefunden: ${invocation.memberName}');
     super.noSuchMethod(invocation); // Fehler NoSuchMethodError werfen
   }
-
 }

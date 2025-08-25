@@ -2,7 +2,7 @@ void main() {
   final characters = {'a': 1, 'b': 2, 'c': 3};
 
   // Eine Liste von MapEntrys wird angehängt
-  final nextCharacters = [MapEntry('d', 4),MapEntry('e', 5),];
+  final nextCharacters = [MapEntry('d', 4), MapEntry('e', 5)];
   characters.addEntries(nextCharacters);
   print(characters); // {a: 1, b: 2, c: 3, d: 4, e: 5}
 

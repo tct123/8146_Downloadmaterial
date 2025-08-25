@@ -11,7 +11,6 @@ mixin Barcode {
   // void initializeOnProduct(Object product) {
   //   _id = product.hashCode.toString();
   // }
-
 }
 
 mixin InternalDisplay on Computer {}

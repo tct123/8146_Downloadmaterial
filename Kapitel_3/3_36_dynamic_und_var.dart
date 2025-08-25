@@ -11,6 +11,6 @@ void main() {
   var c = 'Ein String';
   print(c); // Ein String
   // Fehler, c ist eine Referenz auf String
-  c = false;
+  c = false as String;
   print(c);
 }

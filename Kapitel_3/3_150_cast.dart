@@ -4,5 +4,4 @@ void main() {
   print(numbers.runtimeType); // List<int>
   final casted = numbers.cast<num>();
   print(casted.runtimeType); // CastList<int, num>
-
 }

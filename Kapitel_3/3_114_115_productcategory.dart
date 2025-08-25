@@ -1,9 +1,4 @@
-enum ProductCategory {
-  beverage,
-  food,
-  technology,
-  literature,
-}
+enum ProductCategory { beverage, food, technology, literature }
 
 extension ProductCategoryFormatter on ProductCategory {
   String toBetterString() {

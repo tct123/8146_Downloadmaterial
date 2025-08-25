@@ -30,5 +30,4 @@ void main() {
   // Alle Elemente, die mit s enden
   print(planets.where((p) => p.endsWith('s')));
   // Ergebnis: (Mars, Venus)
-
 }

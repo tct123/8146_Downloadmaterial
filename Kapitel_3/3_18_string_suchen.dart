@@ -5,8 +5,13 @@ void main() {
 
   final expectedGreeting = 'Hallo'.toLowerCase();
 
-  print('Es ist eine Begrüßung: ${possibleGreeting.toLowerCase().startsWith(expectedGreeting)}');
-  print('Es ist eine Begrüßung: ${screamingGreeting.toLowerCase().startsWith(expectedGreeting)}');
-  print('Es ist eine Begrüßung: ${whisperingGreeting.toLowerCase().startsWith(expectedGreeting)}');
-
+  print(
+    'Es ist eine Begrüßung: ${possibleGreeting.toLowerCase().startsWith(expectedGreeting)}',
+  );
+  print(
+    'Es ist eine Begrüßung: ${screamingGreeting.toLowerCase().startsWith(expectedGreeting)}',
+  );
+  print(
+    'Es ist eine Begrüßung: ${whisperingGreeting.toLowerCase().startsWith(expectedGreeting)}',
+  );
 }

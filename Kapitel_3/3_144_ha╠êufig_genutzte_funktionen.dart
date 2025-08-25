@@ -10,5 +10,4 @@ void main() {
   final every = planets.every(condition);
   print(any); // true, mindestens eins
   print(every); // false, nur eins
-
 }

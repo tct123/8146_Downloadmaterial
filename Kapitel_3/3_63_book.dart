@@ -1,6 +1,4 @@
-class Book {
-
-}
+class Book {}
 
 void main() {
   // Sie instanziieren ein Objekt

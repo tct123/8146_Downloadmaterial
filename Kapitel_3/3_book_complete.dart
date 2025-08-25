@@ -1,7 +1,7 @@
 abstract class Book implements PageTurner {
   Book({String? title, int? numberOfPages})
-      : _title = title ?? '',
-        _numberOfPages = numberOfPages ?? 0;
+    : _title = title ?? '',
+      _numberOfPages = numberOfPages ?? 0;
 
   String _title;
   int _numberOfPages;
@@ -52,10 +52,7 @@ abstract class PageTurner {
 
 class DartBook extends Book {
   DartBook({String? title, int? numberOfPages})
-      : super(
-          title: title,
-          numberOfPages: numberOfPages,
-        );
+    : super(title: title, numberOfPages: numberOfPages);
 
   int _page = 0;
 

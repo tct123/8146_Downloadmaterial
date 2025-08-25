@@ -10,5 +10,4 @@ void main() {
   // Entferne alle Buchstaben, bei denen der Index < 3 ist
   characters.removeWhere((c, index) => index < 3);
   print(characters); // {c: 3}
-
 }

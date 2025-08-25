@@ -1,12 +1,10 @@
 /// Basisklasse für verschiedene Bücher
 abstract class Book {
-  Book({
-    required this.title,
-    required this.numberOfPages,
-  });
+  Book({required this.title, required this.numberOfPages});
 
   /// Der Titel dieses Buchs
   final String title;
+
   /// Die Anzahl der Seiten dieses Buchs
   final int numberOfPages;
   bool _opened = false;

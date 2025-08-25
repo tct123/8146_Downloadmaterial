@@ -2,7 +2,7 @@
 class CustomError extends Error {}
 
 // Eine Exception wird hingegen implementiert (Interface).
-class CustomException implements Exception { }
+class CustomException implements Exception {}
 
 void main() {
   // Möglich, aber Dart rät davon ab
@@ -14,5 +14,4 @@ void main() {
   // Eine eigene Exception, um einen
   // Ausnahmefall zu signalisieren
   throw CustomException();
-
 }

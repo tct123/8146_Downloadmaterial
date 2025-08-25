@@ -1,4 +1,4 @@
-void main () {
+void main() {
   final csv = 'Eins 1,Zwei 2,Drei 3';
   final separated = csv.split(',');
   print(separated[0]);

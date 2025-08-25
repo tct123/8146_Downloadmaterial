@@ -11,5 +11,4 @@ void main() {
   print(iterable.elementAt(0)); // Erde
   // Fehler, nicht implementiert
   print(iterable[0]);
-
 }

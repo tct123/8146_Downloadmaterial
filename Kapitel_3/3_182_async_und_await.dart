@@ -9,8 +9,7 @@ Future<void> main() async {
     await Future.sync(() => throw 'Fehler');
     // synchroner Code
     print('Fehlerfrei abgeschlossen');
-  }
-  catch(e) {
+  } catch (e) {
     // wie gewöhnlich verarbeiten
     print(e);
   }
